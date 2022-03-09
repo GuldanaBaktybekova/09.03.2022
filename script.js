@@ -1,5 +1,5 @@
 const main = document.querySelector('main');
-const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const list = [];
 
 function displayList(list) {
   main.innerHTML = "";
@@ -69,6 +69,27 @@ document
     displayList(showEven());
    
   });
+  document
+  .querySelector("#show-all")
+  .addEventListener("click", function () {
+    
+    displayList(list);
+   
+  });
 
  
      
+  fetch("/list.json")
+  .then((response) => {
+    return response.json();
+  })
+  .then((mains) => {
+    mains.forEach((main) => {
+      const mains = document.querySelector("main");
+      
+      mains.append(main);
+      
+
+      
+    });
+  });
