@@ -16,10 +16,16 @@ displayList();
 
 
 function sortDescending() {
-  main.textContent--;
-  list.forEach(sort => {
-    const span = document.createElement('span');
-    span.textContent = sort;
-    main.append(span);
-  })
+  list.sort((a, b) => {
+    if (a > b) {
+      return -1;
+    } 
+    else {
+      return 1;
+   
+    }
+  }
+
 }
+sortDescending();
+displayList();
