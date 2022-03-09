@@ -34,6 +34,10 @@ function showOdd() {
   return  list.filter(item => item % 2 != 0)
    
  };
+ function showEven() {
+  return  list.filter(item => item % 2 == 0)
+   
+ };
 
 
 displayList(list);
@@ -56,6 +60,13 @@ document
   .addEventListener("click", function () {
     
     displayList(showOdd());
+   
+  });
+  document
+  .querySelector("#show-even")
+  .addEventListener("click", function () {
+    
+    displayList(showEven());
    
   });
 
